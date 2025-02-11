@@ -7,69 +7,26 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:very_good_analysis/analysis_options.yaml
-
-# Disables warnings that happen in .freezed.dart
 analyzer:
-  plugins: 
-    - dart_code_metrics
-  exclude:
-    - "**/*.g.dart"
-    - "**/*.gr.dart"
-    - "**/*.freezed.dart"
-    - "**/*.config.dart"
-    - "**/*.graphql.dart"
-    - "**/graphql_api.dart"
   errors:
-    invalid_annotation_target: ignore
+    depend_on_referenced_packages: ignore
+    prefer_const_constructors_in_immutables: ignore
+include: package:flutter_lints/flutter.yaml
 
 linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
   rules:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    public_member_api_docs: false
-    sort_pub_dependencies: false
-    lines_longer_than_80_chars: false
-    flutter_style_todos: false
+    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
-dart_code_metrics:
-  metrics:
-    cyclomatic-complexity: 20
-    maximum-nesting-level: 5
-    number-of-parameters: 4
-    source-lines-of-code: 50
-  metrics-exclude:
-    - test/**
-    - "**/*.g.dart"
-    - "**/*.gr.dart"
-    - "**/*.freezed.dart"
-    - "**/*.config.dart"
-    - "**/*.graphql.dart"
-    - "**/graphql_api.dart"
-  rules:
-    - avoid-collection-methods-with-unrelated-types
-    - avoid-global-state
-    - avoid-missing-enum-constant-in-map
-    - avoid-non-ascii-symbols
-    - avoid-unnecessary-type-assertions
-    - avoid-unnecessary-type-casts
-    - avoid-unrelated-type-assertions
-    - avoid-unused-parameters
-    - binary-expression-operand-order
-    - double-literal-format
-    - format-comment
-    - newline-before-return
-    - no-boolean-literal-compare
-    - no-equal-then-else
-    - no-object-declaration
-    - prefer-async-await
-    - prefer-commenting-analyzer-ignores
-    - prefer-conditional-expressions
-    - prefer-first
-    - prefer-immediate-return
-    - prefer-last
-    - prefer-trailing-comma
-    - tag-name
-    - always-remove-listener
-    - avoid-border-all
-    - avoid-unnecessary-setstate
-    - prefer-const-border-radius
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
