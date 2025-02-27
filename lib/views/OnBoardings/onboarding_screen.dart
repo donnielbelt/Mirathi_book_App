@@ -40,7 +40,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: onBoardinglist.length,
                 physics: const BouncingScrollPhysics(),
-                controller: _pageController1 ?? _pageController2,
+                controller: _pageController1,
                 onPageChanged: (index) {
                   setState(() {
                     _currentIndex = index;
@@ -75,7 +75,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: onBoardinglist.length,
                 physics: const BouncingScrollPhysics(),
-                controller: _pageController2 ?? _pageController1,
+                controller: _pageController2,
                 onPageChanged: (index) {
                   setState(() {
                     _currentIndex = index;
@@ -94,13 +94,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               elevation: 0,
               onTap: () {
                 if (_currentIndex == onBoardinglist.length - 1) {
-                  // When "Get Started" is clicked, navigate to the next page
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => SignInScreen()), // Replace NextPage() with your desired page
+                    MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 } else {
-                  // For "Next", continue with the pageController to move to the next page
                   _pageController1.nextPage(
                     duration: const Duration(milliseconds: 500),
                     curve: Curves.fastOutSlowIn,
@@ -223,6 +221,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
   }
 }
 
+// ignore: must_be_immutable
 class OnBoardingCard extends StatefulWidget {
   OnBoarding onBoardingModel;
   OnBoardingCard({
