@@ -5,19 +5,7 @@ import 'package:mirathi_book_app/views/home/about_view.dart';
 import 'package:mirathi_book_app/views/home/homePage.dart';
 import 'package:mirathi_book_app/views/home/profile_view.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    );
-  }
-}
 
 class HomeScreen extends StatefulWidget {
   @override

@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:mirathi_book_app/themes/themes.dart';
 import 'package:mirathi_book_app/views/OnBoardings/onboarding_screen.dart';
 import 'package:mirathi_book_app/views/OnBoardings/splash_screen.dart';
+import 'package:pspdfkit_flutter/pspdfkit.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await Pspdfkit.initialize();
+  } catch (e) {
+    print("PSPDFKit initialization failed: $e");
+  }
   runApp(const MyApp());
 }
 
