@@ -2,7 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mirathi_book_app/views/auth/login.dart';
 
-class PhoneVerificationPage extends StatelessWidget {
+class PhoneVerificationPage extends StatefulWidget {
+  @override
+  _PhoneVerificationPageState createState() => _PhoneVerificationPageState();
+}
+
+class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
+  final _formKey = GlobalKey<FormState>();
+  final List<TextEditingController> _otpControllers = List.generate(6, (index) => TextEditingController());
+  final List<FocusNode> _focusNodes = List.generate(6, (index) => FocusNode());
+
+  void _verifyOTP() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+    }
+  }
+
+  @override
+  void dispose() {
+    for (var controller in _otpControllers) {
+      controller.dispose();
+    }
+    for (var focusNode in _focusNodes) {
+      focusNode.dispose();
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,45 +87,74 @@ class PhoneVerificationPage extends StatelessWidget {
             right: 0,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                children: [
-                  // OTP Field
-                  TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      hintText: "Enter OTP",
-                      prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.grey),
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    // OTP Fields
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: List.generate(6, (index) {
+                        return SizedBox(
+                          width: 40,
+                          child: TextFormField(
+                            controller: _otpControllers[index],
+                            focusNode: _focusNodes[index],
+                            keyboardType: TextInputType.number,
+                            textAlign: TextAlign.center,
+                            decoration: InputDecoration(
+                              hintText: " ",
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: const BorderSide(color: Colors.grey),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: const BorderSide(color: Color(0xFFD76D2C), width: 2),
+                              ),
+                              filled: true,
+                              fillColor: Colors.white,
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return '';
+                              }
+                              return null;
+                            },
+                            onChanged: (value) {
+                              if (value.length == 1 && index < 5) {
+                                _focusNodes[index + 1].requestFocus();
+                              } else if (value.length == 1 && index == 5) {
+                                _focusNodes[index].unfocus();
+                                _verifyOTP();
+                              }
+                            },
+                          ),
+                        );
+                      }),
                     ),
-                  ),
-                  const SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
-                  // Verify Button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFD76D2C),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                    // Verify Button
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFD76D2C),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        onPressed: _verifyOTP,
+                        child: const Text(
+                          "Verify",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                      },
-                      child: const Text(
-                        "Verify",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

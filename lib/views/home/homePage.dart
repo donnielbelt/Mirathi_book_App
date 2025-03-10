@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mirathi_book_app/views/auth/login.dart';
+import 'package:mirathi_book_app/views/book_cover.dart';
 import 'package:mirathi_book_app/views/home/book_view.dart';
 import 'package:mirathi_book_app/views/home/settings_page.dart';
 import 'package:mirathi_book_app/views/home/share_page.dart';
 import 'package:mirathi_book_app/views/home/terms_and_conditions.dart';
+import 'package:pdf_render/pdf_render_widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -190,10 +192,10 @@ class _HomePageState extends State<HomePage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      bookCard(context, "Book Title 1", "Main Book Author 1", "Main Book Description 1"),
-                      bookCard(context, "Book Title 2", "Main Book Author 2", "Main Book Description 2"),
-                      bookCard(context, "Book Title 3", "Main Book Author 2", "Main Book Description 3"),
-                      bookCard(context, "Book Title 4", "Main Book Author 2", "Main Book Description 4"),
+                      bookCard(context, "Book Title 1", "Main Book Author 1", "Main Book Description 1","assets/pdf/MIRATHI.pdf"),
+                      bookCard(context, "Book Title 2", "Main Book Author 2", "Main Book Description 2","assets/pdf/MIRATHI.pdf"),
+                      bookCard(context, "Book Title 3", "Main Book Author 2", "Main Book Description 3","assets/pdf/MIRATHI.pdf"),
+                      bookCard(context, "Book Title 4", "Main Book Author 2", "Main Book Description 4","assets/pdf/MIRATHI.pdf"),
                     ],
                   ),
                 ),
@@ -232,60 +234,49 @@ class _HomePageState extends State<HomePage> {
   }
 
   // Main Book Card Widget
-  Widget bookCard(BuildContext context, String title, String author, String description) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BookPage(title: title, author: author, description: description),
-          ),
-        );
-      },
-      child: Container(
-        width: 160,
-        margin: const EdgeInsets.only(right: 10),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.red.withOpacity(0.4)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Container(
-                color: Colors.red.withOpacity(0.2),
-                child: Center(
-                  child: Text(
-                    "Book Cover",
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red[800],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(title, style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-            Text(author, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
-          ],
-        ),
+  Widget bookCard(BuildContext context, String title, String author, String description, String pdfPath) {
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BookPage(title: title, author: author, pdfPath: pdfPath, description: description,)),
+      );
+    },
+    child: Container(
+      width: 160,
+      margin: const EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.red.withOpacity(0.4)),
       ),
-    );
-  }
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: SizedBox.expand(child: BookCover(pdfPath: pdfPath)), // First page preview
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(author, style: TextStyle(fontSize: 12, color: Colors.grey)),
+        ],
+      ),
+    ),
+  );
+}
 
-  // Other Books List Tile
+// Other Books List Tile
   Widget bookListTile(BuildContext context, String title, String author, String description) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookPage(title: title, author: author, description: description),
+            builder: (context) => BookPage(title: title, author: author, description: description, pdfPath: '',),
           ),
         );
       },

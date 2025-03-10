@@ -1,5 +1,6 @@
 # This is a generated file; do not edit or check into version control.
 connectivity_plus=/home/egovridc/.pub-cache/hosted/pub.dev/connectivity_plus-6.1.1/
+device_info_plus=/home/egovridc/.pub-cache/hosted/pub.dev/device_info_plus-10.1.2/
 flutter_pdfview=/home/egovridc/.pub-cache/hosted/pub.dev/flutter_pdfview-1.4.0/
 flutter_secure_storage=/home/egovridc/.pub-cache/hosted/pub.dev/flutter_secure_storage-9.2.4/
 flutter_secure_storage_linux=/home/egovridc/.pub-cache/hosted/pub.dev/flutter_secure_storage_linux-1.2.2/
@@ -11,4 +12,12 @@ path_provider_android=/home/egovridc/.pub-cache/hosted/pub.dev/path_provider_and
 path_provider_foundation=/home/egovridc/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.1/
 path_provider_linux=/home/egovridc/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 path_provider_windows=/home/egovridc/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
+pdf_render=/home/egovridc/.pub-cache/hosted/pub.dev/pdf_render-1.4.12/
+pdfx=/home/egovridc/.pub-cache/hosted/pub.dev/pdfx-2.8.0/
 pspdfkit_flutter=/home/egovridc/.pub-cache/hosted/pub.dev/pspdfkit_flutter-4.2.0/
+shared_preferences=/home/egovridc/.pub-cache/hosted/pub.dev/shared_preferences-2.5.2/
+shared_preferences_android=/home/egovridc/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.8/
+shared_preferences_foundation=/home/egovridc/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.4/
+shared_preferences_linux=/home/egovridc/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.4.1/
+shared_preferences_web=/home/egovridc/.pub-cache/hosted/pub.dev/shared_preferences_web-2.4.3/
+shared_preferences_windows=/home/egovridc/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.4.1/

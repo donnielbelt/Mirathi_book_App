@@ -53,6 +53,14 @@ dependencies:
 
   flutter_pdfview: ^1.0.0
 
+  pdf_render: ^1.4.12
+
+  epub_view: ^3.2.0
+
+  pdfx: ^2.8.0
+
+  shared_preferences: ^2.5.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
