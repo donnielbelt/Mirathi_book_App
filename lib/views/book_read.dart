@@ -149,6 +149,7 @@ class _PdfReaderPageState extends State<PdfReaderPage> {
           : PdfView(
               scrollDirection: Axis.vertical,
               controller: _pdfController,
+              pageSnapping: false,
               onPageChanged: (int page) {
                 setState(() {
                   _currentPage = page;
@@ -165,6 +166,7 @@ class _PdfReaderPageState extends State<PdfReaderPage> {
               ),
             ),
       bottomNavigationBar: BottomAppBar(
+        color: Color(0xFFD76D2C),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,

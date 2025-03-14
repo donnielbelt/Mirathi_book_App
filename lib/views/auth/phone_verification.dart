@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mirathi_book_app/views/auth/login.dart';
+import 'package:mirathi_book_app/views/subscription/subscription_page.dart';
 
 class PhoneVerificationPage extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
 
   void _verifyOTP() {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SubscriptionPage()));
     }
   }
 

@@ -181,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Main Book", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-                    Text("Show All", style: TextStyle(color: Colors.red)),
+                    Text("Show All", style: TextStyle(color: Color(0xFFD76D2C))),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      bookCard(context, "Book Title 1", "Main Book Author 1", "Main Book Description 1","assets/pdf/MIRATHI.pdf"),
+                      bookCard(context, "MIRATHI", "Main Book Author 1", "Main Book Description 1","assets/pdf/MIRATHI.pdf"),
                       bookCard(context, "Book Title 2", "Main Book Author 2", "Main Book Description 2","assets/pdf/MIRATHI.pdf"),
                       bookCard(context, "Book Title 3", "Main Book Author 2", "Main Book Description 3","assets/pdf/MIRATHI.pdf"),
                       bookCard(context, "Book Title 4", "Main Book Author 2", "Main Book Description 4","assets/pdf/MIRATHI.pdf"),
@@ -206,8 +206,8 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Other Books", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-                    Text("Show All", style: TextStyle(color: Colors.red)),
+                    Text("Other writings", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+                    Text("Show All", style: TextStyle(color: Color(0xFFD76D2C))),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -215,12 +215,12 @@ class _HomePageState extends State<HomePage> {
                 // Other Book List
                 Column(
                   children: [
-                    bookListTile(context, "Other Book Title 1", "Other Book Author 1", "Other Book Description 1"),
-                    bookListTile(context, "Other Book Title 2", "Other Book Author 2", "Other Book Description 2"),
-                    bookListTile(context, "Other Book Title 3", "Other Book Author 3", "Other Book Description 3"),
-                    bookListTile(context, "Other Book Title 4", "Other Book Author 4", "Other Book Description 4"),
-                    bookListTile(context, "Other Book Title 5", "Other Book Author 4", "Other Book Description 5"),
-                    bookListTile(context, "Other Book Title 6", "Other Book Author 4", "Other Book Description 6"),
+                    bookListTile(context, "Quick Guidelines", "Other  Author 1", "Other  Description 1", "assets/pdf/QUICK.pdf"),
+                    bookListTile(context, "Quick Guidelines", "Other  Author 2", "Other  Description 2", "assets/pdf/QUICK.pdf"),
+                    bookListTile(context, "Quick Guidelines", "Other  Author 3", "Other  Description 3", "assets/pdf/QUICK.pdf"),
+                    bookListTile(context, "Quick Guidelines", "Other  Author 4", "Other  Description 4", "assets/pdf/QUICK.pdf"),
+                    bookListTile(context, "Quick Guidelines", "Other  Author 4", "Other  Description 5", "assets/pdf/QUICK.pdf"),
+                    bookListTile(context, "Quick Guidelines", "Other  Author 4", "Other  Description 6", "assets/pdf/QUICK.pdf"),
                   ],
                 ),
 
@@ -235,48 +235,48 @@ class _HomePageState extends State<HomePage> {
 
   // Main Book Card Widget
   Widget bookCard(BuildContext context, String title, String author, String description, String pdfPath) {
-  return GestureDetector(
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => BookPage(title: title, author: author, pdfPath: pdfPath, description: description,)),
-      );
-    },
-    child: Container(
-      width: 160,
-      margin: const EdgeInsets.only(right: 10),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.red.withOpacity(0.4)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: SizedBox.expand(child: BookCover(pdfPath: pdfPath)), // First page preview
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => BookPage(title: title, author: author, pdfPath: pdfPath, description: description,)),
+        );
+      },
+      child: Container(
+        width: 160,
+        margin: const EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Color(0xFFD76D2C).withOpacity(0.4)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: SizedBox.expand(child: BookCover(pdfPath: pdfPath)), // First page preview
+              ),
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
-          Text(author, style: TextStyle(fontSize: 12, color: Colors.grey)),
-        ],
+            const SizedBox(height: 8),
+            Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(author, style: TextStyle(fontSize: 12, color: Colors.grey)),
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
-// Other Books List Tile
-  Widget bookListTile(BuildContext context, String title, String author, String description) {
+  // Other Books List Tile
+  Widget bookListTile(BuildContext context, String title, String author, String description, String pdfPath) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookPage(title: title, author: author, description: description, pdfPath: '',),
+            builder: (context) => BookPage(title: title, author: author, description: description, pdfPath: pdfPath),
           ),
         );
       },
@@ -293,13 +293,13 @@ class _HomePageState extends State<HomePage> {
             Container(
               width: 70,
               height: 80,
-              color: Colors.red.withOpacity(0.2),
+              color: Color(0xFFD76D2C).withOpacity(0.2),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Center(
-                  child: Text(
-                    "Book Cover",
-                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.red[800]),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(5),
+                    child: SizedBox.expand(child: BookCover(pdfPath: pdfPath)), // First page preview
                   ),
                 ),
               ),

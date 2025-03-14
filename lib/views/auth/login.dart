@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mirathi_book_app/views/auth/sign_up.dart'; 
+import 'package:mirathi_book_app/views/auth/forgot_password.dart';
 import 'package:mirathi_book_app/views/home/Navigation.dart';
-import 'package:mirathi_book_app/views/home/homePage.dart';
-import 'package:mirathi_book_app/views/auth/sign_up.dart'; // Import the SignUpPage
-import 'package:mirathi_book_app/views/auth/forgot_password.dart'; // Import the ForgotPasswordPage
 
 class LoginPage extends StatefulWidget {
   @override
@@ -18,13 +17,13 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login() {
     if (_formKey.currentState!.validate()) {
-      if (_usernameController.text == 'username' &&
+      if (_usernameController.text == 'username@gmail.com' &&
           _passwordController.text == 'User@123_') {
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Invalid username or password')),
+          const SnackBar(content: Text('Invalid email or password')),
         );
       }
     }
@@ -118,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your username';
+                          return 'Please enter your email';
                         }
                         return null;
                       },

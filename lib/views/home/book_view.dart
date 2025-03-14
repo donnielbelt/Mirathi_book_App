@@ -78,7 +78,7 @@ class BookPage extends StatelessWidget {
                     height: 100,
                     color: Colors.red.withOpacity(0.2),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(6.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: SizedBox.expand(
@@ -163,7 +163,7 @@ class BookPage extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    "Read Book",
+                    "Press to Read",
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
