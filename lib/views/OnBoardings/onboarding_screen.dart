@@ -236,11 +236,32 @@ class OnBoardingCard extends StatefulWidget {
 class _OnBoardingCardState extends State<OnBoardingCard> {
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      widget.onBoardingModel.image,
-      height: 300,
-      width: double.maxFinite,
-      fit: BoxFit.fitWidth,
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: Image.asset(
+            widget.onBoardingModel.image,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Positioned.fill(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.white.withOpacity(0.3),
+                  Colors.white,
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
