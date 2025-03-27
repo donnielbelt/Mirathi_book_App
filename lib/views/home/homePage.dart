@@ -192,10 +192,10 @@ class _HomePageState extends State<HomePage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      bookCard(context, "MIRATHI", "Main Book Author 1", "Main Book Description 1","assets/pdf/MIRATHI.pdf"),
-                      bookCard(context, "Book Title 2", "Main Book Author 2", "Main Book Description 2","assets/pdf/MIRATHI.pdf"),
-                      bookCard(context, "Book Title 3", "Main Book Author 2", "Main Book Description 3","assets/pdf/MIRATHI.pdf"),
-                      bookCard(context, "Book Title 4", "Main Book Author 2", "Main Book Description 4","assets/pdf/MIRATHI.pdf"),
+                      bookCard(context, "MIRATHI", "Main Book Author 1", "Main Book Description 1","assets/pdf/MIRATHI_TANZANIA.pdf"),
+                      bookCard(context, "Book Title 2", "Main Book Author 2", "Main Book Description 2","assets/pdf/MIRATHI_TANZANIA.pdf"),
+                      bookCard(context, "Book Title 3", "Main Book Author 2", "Main Book Description 3","assets/pdf/MIRATHI_TANZANIA.pdf"),
+                      bookCard(context, "Book Title 4", "Main Book Author 2", "Main Book Description 4","assets/pdf/MIRATHI_TANZANIA.pdf"),
                     ],
                   ),
                 ),
