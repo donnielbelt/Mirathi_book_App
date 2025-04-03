@@ -60,15 +60,21 @@ class AboutPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Chapter 1:", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
+                    Text("Welcome to Mirathi Tanzania", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16,color: Color(0xFFD76D2C))),
                     const SizedBox(height: 10),
                     Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac felis id elit consequat tincidunt. Nulla facilisi. Duis nec purus quis purus vehicula fringilla ut vel purus. Vestibulum varius, quam at efficitur venenatis, felis lectus tincidunt eros, sed tristique odio lectus vel nisi.\n\n"
-                      "Donec eget risus et sem ullamcorper consectetur. Etiam tincidunt auctor mi, sed gravida magna ullamcorper sit amet. Vivamus nec erat eu nisi condimentum malesuada. Vestibulum aliquet enim ut magna elementum, id gravida justo vestibulum. Fusce in nisl nec libero gravida volutpat.\n\n"
-                      "Suspendisse id cursus metus. Nam interdum, purus nec faucibus vehicula, turpis justo rhoncus nulla, sit amet suscipit orci risus nec orci. Duis facilisis justo et convallis interdum.\n\n"
-                      "Fusce consectetur diam felis, non accumsan nunc posuere a. Integer porta euismod diam, et tincidunt orci pharetra eu. Integer non erat eget odio euismod ultrices.\n\n"
-                      "Integer nec felis libero. Phasellus varius, erat in rhoncus sodales, ligula libero luctus sem, ac rhoncus quam turpis a nunc. Sed a mi id turpis interdum efficitur. Vestibulum et quam nulla.",
-                      style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[800]),
+                      "Your trusted guide to inheritance matters in Tanzania. This app is designed to provide clear and reliable information on inheritance laws, helping individuals and families navigate estate planning, succession, and legal procedures with ease.\n\n"
+                      "Whether you are planning for the future or handling an inheritance case, Mirathi Tanzania offers valuable insights and resources tailored to the Tanzanian legal framework.\n\n"
+                      "Please note that the content within this app is for informational purposes only and should not be considered legal advice."
+                      ,style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[800]),
+                    ),
+                    const SizedBox(height: 20),
+                    Text("Additionally", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16,color: Color(0xFFD76D2C))),
+                    const SizedBox(height: 10),
+                    Text(
+                      "This book and all its contents are protected—users are strictly prohibited from taking screenshots, recording videos, or selling the materials without prior consent.\n\n"
+                      "Unauthorized distribution or reproduction may result in legal action."
+                      ,style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[800]),
                     ),
                   ],
                 ),

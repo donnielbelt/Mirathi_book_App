@@ -23,17 +23,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
-          Container(
-            height: 10,
-            width: 10,
-            margin: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          const SizedBox(height: 16),
           Expanded(
             flex: 5,
             child: PageView.builder(
@@ -317,19 +306,21 @@ class OnBoarding {
 
 List<OnBoarding> onBoardinglist = [
   OnBoarding(
-    title: ' Can be accessed from anywhere at any time',
+    title: 'Access Your Family\'s Legacy Documents Anytime, Anywhere',
     image: ImagesPath.kOnboarding1,
     description:
-        'The essential language learning tools and resources you need to seamlessly transition into mastering a new language',
+        'Access knowledge about family\'s wills, trusts, and other important related documents with ease, from any device, at any time',
   ),
   OnBoarding(
-      title: 'Offers a dynamic and interactive experience',
-      image: ImagesPath.kOnboarding2,
-      description:
-          'Engaging features including test, story telling, and conversations that motivate and inspire language learners to unlock their full potential'),
+    title: 'Simplify Inheritance Management with Intuitive Tools',
+    image: ImagesPath.kOnboarding2,
+    description:
+        'Our app offers a user-friendly interface with features like searchable archives and guided processes to make managing your family\'s legacy straightforward and stress-free',
+  ),
   OnBoarding(
-      title: "Experience the Premium Features with Our App",
-      image: ImagesPath.kOnboarding3,
-      description:
-          'Updated TalkGpt with premium materials and a dedicated following, providing language learners with immersive content for effective learning'),
+    title: 'Unlock Advanced Inheritance Management Tools',
+    image: ImagesPath.kOnboarding3,
+    description:
+        'Upgrade to premium for encrypted document storage, personalized consultations with inheritance experts, and advanced organizational features to ensure your family\'s legacy is preserved for generations',
+  ),
 ];

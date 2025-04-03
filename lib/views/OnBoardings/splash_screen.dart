@@ -23,7 +23,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           Image.asset(
             imagePath,
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           ),
           Container(
             decoration: BoxDecoration(

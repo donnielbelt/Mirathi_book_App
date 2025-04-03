@@ -116,7 +116,7 @@ class EditProfilePage extends StatelessWidget {
                     const SizedBox(height: 10),
                     TextField(
                       decoration: InputDecoration(
-                        hintText: "John Doe",
+                        hintText: "User Name",
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
@@ -131,7 +131,7 @@ class EditProfilePage extends StatelessWidget {
                     const SizedBox(height: 10),
                     TextField(
                       decoration: InputDecoration(
-                        hintText: "john.doe@example.com",
+                        hintText: "user.name@example.com",
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(

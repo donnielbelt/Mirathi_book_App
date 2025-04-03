@@ -131,7 +131,7 @@ class ProfilePage extends StatelessWidget {
                     Text("Name:", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
                     const SizedBox(height: 10),
                     Text(
-                      "John Doe",
+                      "User Name",
                       style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[800]),
                     ),
                     const SizedBox(height: 20),
@@ -139,7 +139,7 @@ class ProfilePage extends StatelessWidget {
                     Text("Email:", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
                     const SizedBox(height: 10),
                     Text(
-                      "john.doe@example.com",
+                      "Username@example.com",
                       style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[800]),
                     ),
                     const SizedBox(height: 20),

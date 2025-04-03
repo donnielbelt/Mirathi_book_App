@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(20)),
-                  color: Colors.white.withOpacity(0.8),
+                  color: Colors.white.withOpacity(0.9),
                 ),
                 height: MediaQuery.of(context).size.height * 0.45,
                 child: Column(
@@ -309,9 +309,10 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-                  Text(author, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
-                  Text(description, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey[700])),
+                  Text(title, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 20)),
+                  Text(author, style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey)),
+                  SizedBox(height: 8),
+                  Text(description, style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700])),
                 ],
               ),
             ),

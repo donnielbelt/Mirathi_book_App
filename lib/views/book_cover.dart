@@ -89,8 +89,10 @@ class _BookCoverState extends State<BookCover> {
       await doc.dispose();
     } catch (e) {
       setState(() {
-        _errorMessage = 'Failed to load PDF page: $e';
+        _errorMessage = 'Failed PDF page: $e';
       });
+      print('===================================================');
+      print('Failed to load PDF page: $e');
     }
   }
 
@@ -118,7 +120,7 @@ class _BookCoverState extends State<BookCover> {
         child: Image.memory(
           _convertedImage!,
           errorBuilder: (context, error, stackTrace) {
-            return Center(child: Text('Failed to load image: $error'));
+            return Center(child: Text('Failed to limage: $error'));
           },
         ),
       ),

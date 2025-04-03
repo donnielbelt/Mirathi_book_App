@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       home:  SplashScreen(
-        imagePath: 'assets/images/splash_image.png',
+        imagePath: 'assets/images/2.jpeg',
         title: 'Urithi na Mirathi',
         subtitle: 'Your Gateway to Knowledge                           \nAbout Inheritance',
 ),
